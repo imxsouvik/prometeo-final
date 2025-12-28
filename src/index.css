@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* PROMETEO - Trust Blue Emergency Theme */
+
+@layer base {
+  :root {
+    /* Trust Blue Theme - Light Mode */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+
+    /* Cards - Light background for general use */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    /* Branded container - #0E0E55 dark blue */
+    --branded: 240 72% 19%;
+    --branded-foreground: 0 0% 100%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Trust Blue Primary */
+    --primary: 211 84% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 94%;
+    --secondary-foreground: 215 25% 15%;
+
+    --muted: 210 15% 92%;
+    --muted-foreground: 215 15% 45%;
+
+    --accent: 211 70% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Emergency Colors */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 214 20% 88%;
+    --input: 215 25% 15%;
+    --input-background: 0 0% 100%;
+    --ring: 211 84% 45%;
+
+    --radius: 0.625rem;
+
+    /* Blue section - #0000FF for specific containers */
+    --section-blue: 240 100% 50%;
+    --section-blue-foreground: 0 0% 100%;
+
+    /* Navbar/Footer - #0E0E55 unified dark blue */
+    --nav-background: 240 72% 19%;
+    --nav-foreground: 0 0% 100%;
+    --footer-background: 240 72% 19%;
+    --footer-foreground: 0 0% 100%;
+
+    /* Sidebar */
+    --sidebar-background: 210 20% 96%;
+    --sidebar-foreground: 215 25% 25%;
+    --sidebar-primary: 211 84% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 211 50% 92%;
+    --sidebar-accent-foreground: 211 84% 35%;
+    --sidebar-border: 214 20% 88%;
+    --sidebar-ring: 211 84% 45%;
+  }
+
+  .dark {
+    /* Trust Blue Theme - Dark Mode */
+    --background: 220 20% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 18% 12%;
+    --card-foreground: 210 20% 95%;
+
+    /* Branded container - slightly lighter in dark mode */
+    --branded: 240 50% 25%;
+    --branded-foreground: 0 0% 100%;
+
+    --popover: 220 18% 12%;
+    --popover-foreground: 210 20% 95%;
+
+    /* Trust Blue Primary - brighter in dark */
+    --primary: 211 90% 58%;
+    --primary-foreground: 220 20% 8%;
+
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 210 20% 95%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 215 15% 60%;
+
+    --accent: 211 80% 55%;
+    --accent-foreground: 220 20% 8%;
+
+    /* Emergency Colors - Dark Mode */
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 50%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 0 0% 10%;
+
+    --border: 220 15% 22%;
+    --input: 210 20% 95%;
+    --input-background: 220 15% 22%;
+    --ring: 211 90% 58%;
+
+    /* Blue section - same as primary in dark mode */
+    --section-blue: 211 80% 55%;
+    --section-blue-foreground: 0 0% 100%;
+
+    /* Navbar/Footer - Black in dark mode */
+    --nav-background: 0 0% 5%;
+    --nav-foreground: 210 20% 95%;
+    --footer-background: 0 0% 5%;
+    --footer-foreground: 210 20% 95%;
+
+    /* Sidebar - Dark */
+    --sidebar-background: 220 18% 10%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 211 90% 58%;
+    --sidebar-primary-foreground: 220 20% 8%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 211 80% 65%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 211 90% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Ensure Leaflet map elements don't overlap navbar */
+  .leaflet-pane,
+  .leaflet-control,
+  .leaflet-top,
+  .leaflet-bottom {
+    z-index: 10 !important;
+  }
+  
+  .leaflet-control-zoom {
+    z-index: 10 !important;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  }
+
+  .gradient-emergency {
+    background: linear-gradient(135deg, hsl(var(--destructive)) 0%, hsl(var(--warning)) 100%);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+
+  .shadow-emergency {
+    box-shadow: 0 0 20px hsl(var(--destructive) / 0.4);
+  }
+
+  .shadow-card-glow {
+    box-shadow: 0 4px 20px hsl(240 72% 19% / 0.4), 0 0 40px hsl(240 72% 30% / 0.2);
+  }
+
+  .card-glow {
+    box-shadow: 0 8px 32px hsl(240 72% 10% / 0.3), 0 0 0 1px hsl(240 72% 30% / 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .card-glow:hover {
+    box-shadow: 0 12px 40px hsl(240 72% 15% / 0.4), 0 0 60px hsl(240 72% 40% / 0.15);
+  }
+}
