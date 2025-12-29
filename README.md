@@ -35,3 +35,13 @@ A life-saving emergency platform where citizens can report incidents and verifie
 - **Storage:** Supabase Storage (Incident Videos & Admin IDs)
 - **Routing:** OSRM / GraphHopper (Free routing plugins)
 - **Config:** dotenv (`.env`)
+
+## .env
+- VITE_SUPABASE_PROJECT_ID=""
+- VITE_SUPABASE_PUBLISHABLE_KEY=""
+- VITE_SUPABASE_URL=""
+
+## Super Admin id & password
+ID: imisouvik@gmail.com
+Passwprd: Pranav1234@
+* Super admin id & password will be given by government to the workers
