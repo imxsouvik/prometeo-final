@@ -42,6 +42,6 @@ A life-saving emergency platform where citizens can report incidents and verifie
 - VITE_SUPABASE_URL=""
 
 ## Super Admin id & password
-ID: imisouvik@gmail.com
-Passwprd: Pranav1234@
+ID: ""
+Passwprd: ""
 * Super admin id & password will be given by government to the workers
